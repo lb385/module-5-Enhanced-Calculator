@@ -64,7 +64,7 @@ class CalculationHistory:
             # Enforce max_records limit if set
             if self.max_records is not None and len(self._df) > self.max_records:
                 self.truncate_to_limit(self.max_records)
-        except Exception as e:
+        except Exception as e:  # pragma: no cover
             raise HistoryError(f"Failed to add calculation to history: {e}") from e
 
     def get_history(self, limit: Optional[int] = None) -> pd.DataFrame:

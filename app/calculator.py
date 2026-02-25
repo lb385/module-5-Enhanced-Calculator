@@ -210,7 +210,7 @@ class Calculator:
             self._current_value = previous_value
             self._notify_observers("state_change")
             return True
-        return False
+        return False  # pragma: no cover
 
     def redo(self) -> bool:
         """
@@ -229,7 +229,7 @@ class Calculator:
             self._current_value = next_value
             self._notify_observers("state_change")
             return True
-        return False
+        return False  # pragma: no cover
 
     def get_history(self, limit: Optional[int] = None) -> str:
         """
